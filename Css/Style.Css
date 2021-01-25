@@ -71,14 +71,44 @@ nav a::before {
 nav a:hover::before {
   width: 100%;
 }
+
+
+
+
+
 footer {
-    background-color: black;
-    padding: 10px;
-    display: inline-block;
-    display: table;
-    clear: both;
-    position: absolute;
-    color: ghostwhite;
-    width: 100%;
-    margin: 0 auto;
-  }
+  float: left;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer li {
+  display: inline-block;
+  margin-left: 135px;
+  padding-top: 32px;
+  padding-bottom: 50px;
+}
+
+footer a {
+  color:ghostwhite;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+footer a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #DCDCDC;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
