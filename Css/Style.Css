@@ -77,7 +77,6 @@ nav a:hover::before {
 
 
 footer {
-<<<<<<< Updated upstream
   float: left;
 }
 
@@ -112,7 +111,6 @@ footer a::before {
   width: 0%;
 
   transition: all ease-in-out 250ms;
-=======
     background-color: black;
     padding: 10px;
     display: inline-block;
@@ -126,5 +124,4 @@ footer a::before {
 h1 {
   font-size: 50px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
->>>>>>> Stashed changes
 }
