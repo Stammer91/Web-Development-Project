@@ -111,4 +111,17 @@ footer a::before {
   width: 0%;
 
   transition: all ease-in-out 250ms;
+    background-color: black;
+    padding: 10px;
+    display: inline-block;
+    display: table;
+    clear: both;
+    
+    color: ghostwhite;
+    width: 100%;
+    
+  }
+h1 {
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
