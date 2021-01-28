@@ -121,3 +121,16 @@ footer a::before {
     width: 100%;
     
   }
+<<<<<<< HEAD
+=======
+h1 {
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+input[type=text] {
+
+  width: 200px;
+  padding: 12px;
+
+}
+>>>>>>> 95812f0d056f386fee95d434b09a13ce9c3383e9
