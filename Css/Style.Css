@@ -121,6 +121,7 @@ footer a::before {
     width: 100%;
     
   }
+
 h1 {
   font-size: 50px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -131,3 +132,4 @@ input[type=text] {
   padding: 12px;
 
 }
+
