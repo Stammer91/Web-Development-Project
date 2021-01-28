@@ -23,6 +23,26 @@
       <h1>(Otsikko)</h1>
       <header>
         <div class="container">
+          <form action="/my-handling-form-page" method="post">
+            <ul>
+                <li>
+                    <label for="varaukset":>Varaukset:</label>
+                    <input type="text" id="name"="tilaaja_nimi">
+                </li>
+                <li>
+                    <label for="mail">E-mail:</label>
+                    <input type="email" id="mail" name="tilaaja_email">
+                </li>
+                <li>
+                    <label for="kpl">hlö määrä:</label>
+                    <input type="kpl"   id="kpl"    name="tilaaja_määrä">
+                </li>
+                <li>
+                    <label for="msg">Lisätiedot:</label>
+                    <textarea id="msg" name="tilaaja_msg">Tähän lisätiedot:</textarea>
+                </li>
+            </ul>
+            </form>
           <footer>
             <ul>
               <li><a>Aukioloaika</a></li>
