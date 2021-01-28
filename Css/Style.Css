@@ -125,3 +125,9 @@ h1 {
   font-size: 50px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+input[type=text] {
+
+  width: 200px;
+  padding: 12px;
+
+}
