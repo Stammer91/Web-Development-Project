@@ -20,9 +20,31 @@
           </nav>
         </div>
       </header>
-      <h1>(Otsikko)</h1>
+      <h1>Varaa pöytä Hämpton ravintolaan valitsemanne kokoiselle seurueelle!</h1>
+      <form action="/my-handling-form-page" method="post">
+        <ul>
+            <li>
+                <label for="varaukset":>Varaukset:</label>
+                <input type="text" id="name" name="tilaaja_nimi" required>
+            </li>
+            <li>
+                <label for="mail">E-mail:</label>
+                <input type="text" id="mail" name="tilaaja_email" required>
+            </li>
+            <li>
+                <label for="kpl">hlö määrä:</label>
+                <input type="text"   id="kpl"    name="tilaaja_määrä" required>
+            </li>
+            <li>
+                <label for="msg">Lisätiedot:</label>
+                <textarea id="msg" name="tilaaja_msg"  style="height: 200px;" style="width: 400px;" style="resize: none;" placeholder="Tähän lisätiedot:"></textarea>
+            </li>
+            <button></button>
+        </ul>
+        </form>
       <header>
         <div class="container">
+         
           <footer>
             <ul>
               <li><a>Aukioloaika</a></li>
@@ -32,10 +54,10 @@
               <li><a>Some linkit</a></li>
               <li><a>Arkisin 10.00-19.00</a></li>
               <li><a>Puhelin numero +358 40 4170313</a></li>
-              <li><a href="">-> Instagram</a></li>
+              <li><a href="https://www.instagram.com/">-> Instagram</a></li>
               <li><a>Lauantai 10.00-21.00</a></li>
               <li><a>HämptonDiner@outlook.com</a></li>
-              <li><a href="">-> Facebook</a></li>
+              <li><a href="https://fi-fi.facebook.com/">-> Facebook</a></li>
               <li><a>Sunnuntai 12.00-19.00</a></li>
             </ul>
           </footer>
