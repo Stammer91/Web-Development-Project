@@ -20,27 +20,27 @@
           </nav>
         </div>
       </header>
-      <h1>(Otsikko)</h1>
+      <h1>Varaa pöytä Hämpton ravintolaan valitsemanne kokoiselle seurueelle!</h1>
       <form action="/my-handling-form-page" method="post">
-        <ul>
-            <li>
-                <label for="varaukset":>Varaukset:</label>
-                <input type="text" id="name" name="tilaaja_nimi" required>
-            </li>
-            <li>
-                <label for="mail">E-mail:</label>
-                <input type="text" id="mail" name="tilaaja_email" required>
-            </li>
-            <li>
-                <label for="kpl">hlö määrä:</label>
-                <input type="text"   id="kpl"    name="tilaaja_määrä" required>
-            </li>
-            <li>
-                <label for="msg">Lisätiedot:</label>
-                <textarea id="msg" name="tilaaja_msg"  style="height: 200px;" style="width: 400px;" style="resize: none;" placeholder="Tähän lisätiedot:"></textarea>
-            </li>
-            <button></button>
-        </ul>
+        
+        <div class="form-varaus">
+          <label for="varaukset":>Varaukset:</label> <br>
+          <input type="text" id="name" placeholder="Esimerkki Nimi" name="tilaaja_nimi" required>
+        </div>    
+        <div class="form-mail">
+          <label for="mail">E-mail:</label> <br>
+          <input type="text" id="mail" placeholder="esimerkki@mail.com" name="tilaaja_email" required>
+        </div>
+        <div class="form-kpl">
+          <label for="kpl">Seurueen koko:</label> <br>
+          <input type="text"   id="kpl"  placeholder="0"  name="tilaaja_määrä" required>   
+        </div>
+        <div class="form-nimi">
+          <label for="msg">Lisätiedot:</label> <br>
+          <textarea id="msg" name="tilaaja_msg"   rows="6"  style="height:200px ;" style="width: 50%;" style="resize: none;"  placeholder="Tähän lisätiedot:"></textarea>
+        </div>
+            <button type="submit" class="btn btn-primary">Suorita tilaus</button>
+        
         </form>
       <header>
         <div class="container">
