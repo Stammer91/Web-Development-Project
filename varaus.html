@@ -21,10 +21,14 @@
         </div>
       </header>
       <h1>Varaa pöytä Hämpton ravintolaan valitsemanne kokoiselle seurueelle!</h1>
+      <div class="container">
+        <div class="col">
       <form action="/my-handling-form-page" method="post">
         
+          <h3 style="text-align: left;">  </h3>
+
         <div class="form-varaus">
-          <label for="varaukset":>Varaukset:</label> <br>
+          <label for="varaukset":>Nimi:</label> <br>
           <input type="text" id="name" placeholder="Esimerkki Nimi" name="tilaaja_nimi" required>
         </div>    
         <div class="form-mail">
@@ -35,6 +39,10 @@
           <label for="kpl">Seurueen koko:</label> <br>
           <input type="text"   id="kpl"  placeholder="0"  name="tilaaja_määrä" required>   
         </div>
+        <div class="form-aika">
+        <label for="aika">Toivottu päivämäärä ja aika:</label> <br>
+        <input type="datetime-local"   id="varausaika"  name="tilaaja_aika" value="2021-02-05T16:00" min="2021-02-05T00:00" required>   
+        </div>
         <div class="form-nimi">
           <label for="msg">Lisätiedot:</label> <br>
           <textarea id="msg" name="tilaaja_msg"   rows="6"  style="height:200px ;" style="width: 50%;" style="resize: none;"  placeholder="Tähän lisätiedot:"></textarea>
@@ -42,6 +50,12 @@
             <button type="submit" class="btn btn-primary">Suorita tilaus</button>
         
         </form>
+        </div>
+        <div class="col-7"> 
+          <h3> Pyrimme ottamaan yhteyttä mahdollisimman pian! </h3> <br>
+          <h3>Valitettavasti nykyisen tilanteen takia pöytiä on rajallinen määrä ja pyrimme noudattamaan rajoituksia.</h3>
+        </div>
+        </div>
       <header>
         <div class="container">
          
