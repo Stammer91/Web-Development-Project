@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" href="Css/Style.Css">    
     <title>Varaukset | Ravintola Hämpton Diner</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -27,7 +28,7 @@
       <div class="container">
         <div class="row">
         <div class="col-4">
-      <form action="/index.html" method="post">
+      <form action="varaukset.php" method="post">
         <h3>Varaa pöytä Hämpton ravintolaan valitsemanne kokoiselle seurueelle!</h3>
           
 
@@ -39,9 +40,9 @@
           <label for="mail">E-mail:</label> <br>
           <input type="text" id="mail" placeholder="esimerkki@mail.com" name="tilaaja_email" required>
         </div>
-        <div class="form-kpl">
-          <label for="kpl">Seurueen koko:</label> <br>
-          <input type="text"   id="kpl"  placeholder="0"  name="tilaaja_määrä" required>   
+        <div class="form-maara">
+          <label for="maara">Seurueen koko:</label> <br>
+          <input type="text"   id="maara"  placeholder="0"  name="tilaaja_maara" required>   
         </div>
         <div class="form-aika">
         <label for="aika">Toivottu päivämäärä ja aika:</label> <br>
@@ -49,10 +50,12 @@
         </div>
         <div class="form-nimi">
           <label for="msg">Lisätiedot:</label> <br>
-          <textarea id="msg" name="tilaaja_msg"   rows="6"  style="height:200px ;" style="width: 50%;" style="resize: none;"  placeholder="Tähän lisätiedot:"></textarea>
+          <textarea id="msg" name="tilaaja_msg"  cols="60" rows="6"  style="resize: none;"  placeholder="Tähän lisätiedot:" required ></textarea>
         </div>
-            <button type="submit" class="btn btn-primary">Suorita tilaus</button>
-        
+            <button type="submit" name="submitvaraus" class="btn btn-primary">Suorita tilaus</button>
+        <script> 
+       
+        </script>
         </form>
         </div>
         <div class="col"> 
