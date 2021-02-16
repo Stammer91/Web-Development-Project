@@ -3,7 +3,7 @@ set_error_handler("anyError", E_ALL);
 
  
 
-$error="Tallennus onnistui";
+$error="Lähetetty";
 
  
 
