@@ -2,20 +2,29 @@
 
 <html>
   <head>
-       <title> Home </title>
+       <title>Käyttäjä | Ravintola Hämpton Diner</title>
+       <link rel="Stylesheet" href="Css/Style.Css">
   </head>
   <body>
+  <header>
+    <div class="container">
+      <img class="logo" src="Images/Logo 1.png">
+      <nav>
+        <ul>
+          <li><a href="http://127.0.0.1/Web-Development-Project/Kirjaudu_Ulos.php">Kirjaudu Ulos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 <?php
-      if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+      if(!isset($_SESSION['use']))
        {
-           header("Location:Kirjautuminen.php");  
+           header("Location:Kirjaudu.php");  
        }
 
           echo $_SESSION['use'];
 
-          echo "Login Success";
-
-          echo "<a href='Kirjaudu_Ulos.php'> Logout</a> "; 
+          echo " Kirjautuminen onnistui"; 
 ?>
 </body>
 </html>
