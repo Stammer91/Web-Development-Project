@@ -5,6 +5,11 @@ set_error_handler("anyError", E_ALL);
 
 $error="Lähetetty";
 
+$initials=parse_ini_file(".ht_db_inifile.ini");
+$database=$initials["databasename"];
+$user=$initials["username"];
+$passwd=$initials["password"];
+
  
 
 $nimi=$_POST["nimi"];
@@ -18,7 +23,7 @@ if (!isset($nimi) || !isset($email) || !isset($viesti) || empty($nimi) || empty(
     return;
 }
 
-$yhteys=mysqli_connect("localhost", "trtkp20a3", "trtkp20a3passwd");
+$yhteys=mysqli_connect("localhost", $user, $passwd);
 
 if (!$yhteys){
     $error="Yhteys tietokantapalvelimeen epäonnistui";
@@ -26,7 +31,7 @@ if (!$yhteys){
     return;
 }
 
-$ok=mysqli_select_db($yhteys, "trtkp20a3");
+$ok=mysqli_select_db($yhteys, $database);
 if (!$ok){
     $error="Tietokannan valinta epäonnistui";
     print $error;
