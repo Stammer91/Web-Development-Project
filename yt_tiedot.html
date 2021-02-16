@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" href="Css/Style.Css">    
     <title>Yhteystiedot | Ravintola Hämpton Diner</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body>
@@ -22,11 +23,10 @@
           </nav>
         </div>
       </header>
+
       <div class="container">
-        <form action="" method="post" target="_self">
-          
-          <h3 style="text-align: left;">Kerro mielipiteesi ruuista, palvelusta tai nettisivusta</h3>
-      
+        <h3 style="text-align: left;">Kerro mielipiteesi ruuista, palvelusta tai nettisivusta</h3>
+        <form>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
@@ -34,7 +34,7 @@
                   <i class="fa fa-user"></i>&nbsp
                 </span>
               </div>
-              <input name="name" type="name" placeholder="Nimi" class="form-control border-left-0" required>
+              Nimi:<input id="nimi" type="text" name="nimi" value=" " class="form-control border-left-0" required><br>
             </div>
           </div>
       
@@ -45,19 +45,46 @@
                   <i class="fa fa-envelope"></i>
                 </span>
               </div>
-              <input name="email" type="email" placeholder="Sähköposti" class="form-control border-left-0" required>
+              Sähköposti:<input id="email" type="text" name="email" value=" " class="form-control border-left-0" required><br>
             </div>
           </div>
-      
+
           <div class="form-group">
-            <textarea input name="textdata" class="form-control" id="message" rows="5" placeholder="Kirjoita Viesti..." required></textarea>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white">
+                  <i class="fa fa-envelope"></i>
+                </span>
+              </div>
+              Viesti:<input id="viesti" type="text" name="viesti" value=" " class="form-control border-left-0" required><br>
+            </div>
           </div>
-      
-          <button type="submit" class="btn btn-primary float-right">
+          
+        </form>
+          <button name="laheta" id="laheta" onclick="lahetatiedot();" class="btn btn-primary float-right">
             <i class="fa fa-paper-plane"></i> 
             Lähetä
           </button>
-        </form>
+
+          <p id='tulos'>Lähetyksen tila.</p>
+
+          <script>
+          function lahetatiedot() {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                       document.getElementById("tulos").innerHTML = this.responseText;
+                       tulos2.innerHTML = this.responseText;
+                               tulos3.innerHTML = this.responseText;
+                }
+              };
+              xhttp.open("post", "palaute.php", true);
+              xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              xhttp.send("nimi="+nimi.value+"&email="+email.value+"&viesti="+viesti.value);
+          }
+          </script>  
+
+      
       </div>
       <h4 style="text-align: center;">Yhteystiedot näkyvät alhaalla</h4>
       <header>
