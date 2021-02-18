@@ -3,7 +3,7 @@ set_error_handler("anyError", E_ALL);
 
  
 
-$error="Lähetetty";
+$error="Lähetetty!";
 
 $initials=parse_ini_file(".ht_db_inifile.ini");
 $database=$initials["databasename"];
