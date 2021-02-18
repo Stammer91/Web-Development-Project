@@ -18,7 +18,7 @@ if(isset($_POST['kirjaudu'])) //Tarkistaa painettiinko kirjaudu nappia
      $pass = $_POST['Sala'];
 
     if(isset($_POST["Ktunnus"]) && isset($_POST["Sala"])){
-    $file = fopen('Käyttäjä.txt', 'r');
+    $file = fopen('.htKäyttäjä.txt', 'r');
     $good=false;
     while(!feof($file)){
         $line = fgets($file);
