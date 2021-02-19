@@ -6,6 +6,7 @@
     <link rel="Stylesheet" href="Css/Style.Css">    
     <title>Varaukset | Ravintola Hämpton Diner</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
 </head>
 <body>
     <header>
@@ -28,33 +29,41 @@
       <div class="container">
         <div class="row">
         <div class="col-4">
-      <form action="varaukset.php" method="post">
+      <form>
         <h3>Varaa pöytä Hämpton ravintolaan valitsemanne kokoiselle seurueelle!</h3>
           
 
         <div class="form-varaus">
           <label for="varaukset":>Nimi:</label> <br>
-          <input type="text" id="name" placeholder="Esimerkki Nimi" name="tilaaja_nimi" required>
+          <input type="text" id="nimi" placeholder="Esimerkki Nimi" name="nimi" required>
         </div>    
         <div class="form-mail">
           <label for="mail">E-mail:</label> <br>
-          <input type="text" id="mail" placeholder="esimerkki@mail.com" name="tilaaja_email" required>
+          <input type="text" id="email" placeholder="esimerkki@mail.com" name="email" required>
         </div>
         <div class="form-maara">
           <label for="maara">Seurueen koko:</label> <br>
-          <input type="text"   id="maara"  placeholder="0"  name="tilaaja_maara" required>   
+          <input type="text"   id="maara"  placeholder="0"  name="maara" required>   
         </div>
         <div class="form-aika">
         <label for="aika">Toivottu päivämäärä ja aika:</label> <br>
-        <input type="datetime-local"   id="varausaika"  name="tilaaja_aika" value="2021-02-05T16:00" min="2021-02-05" min="10:00" max="18:00" required>   
+        <input type="datetime-local"   id="pvm"  name="pvm" value="2021-02-05T16:00" min="2021-02-05" min="10:00" max="18:00" required>   
         </div>
         <div class="form-nimi">
           <label for="msg">Lisätiedot:</label> <br>
-          <textarea id="msg" name="tilaaja_msg"  cols="60" rows="6"  style="resize: none;"  placeholder="Tähän lisätiedot:" required ></textarea>
+          <textarea id="lisatiedot" name="lisatiedot"  cols="60" rows="6"  style="resize: none;"  placeholder="Tähän lisätiedot:" required ></textarea>
         </div>
-            <button type="submit" name="submitvaraus" class="btn btn-primary">Suorita tilaus</button>
+            <button type="button" onclick="suoritaVaraus();" name="submitvaraus" class="btn btn-primary">Suorita tilaus</button>
         <script> 
-       
+function suoritaVaraus() {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+
+                xhttp.open("post", "varaukset.php", true);
+              xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              xhttp.send("nimi="+nimi.value+"&email="+email.value+"&maara="+maara.value+"&pvm="+pvm.value+"&lisatiedot="+lisatiedot.value);
+              };
+            };
         </script>
         </form>
         </div>

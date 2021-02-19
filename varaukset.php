@@ -1,7 +1,8 @@
 <?php  
 set_error_handler("anyError", E_ALL);
 
- 
+$error="Varaus suoritettu";
+
 $initials=parse_ini_file(".ht_db_inifile.ini");
 $database=$initials["databasename"];
 $user=$initials["username"];
@@ -9,14 +10,14 @@ $passwd=$initials["password"];
 
  
 
-$error="Varaus suoritettu";
+
 
  
-    $nimi=$_POST["tilaaja_nimi"];
-    $email=$_POST["tilaaja_mail"];
-    $maara=$_POST["tilaaja_maara"];
-    $pvm=$_POST["tilaaja_aika"];
-    $lisatiedot=$_POST["tilaaja_msg"];
+    $nimi=$_POST["nimi"];
+    $email=$_POST["email"];
+    $maara=$_POST["maara"];
+    $pvm=$_POST["pvm"];
+    $lisatiedot=$_POST["lisatiedot"];
 
 
 if (!isset($nimi) || !isset($email) || !isset($maara) || !isset($pvm) || !isset($lisatiedot) || empty($nimi) || empty($email) || empty($maara)|| empty($pvm)|| empty($lisatiedot)){
