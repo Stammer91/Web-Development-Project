@@ -25,6 +25,7 @@ if (!isset($nimi) || !isset($email) || !isset($maara) || !isset($pvm) || !isset(
     print $error;
     return;
 }
+
 $yhteys=mysqli_connect("localhost", $user, $passwd);
 
 if (!$yhteys){
