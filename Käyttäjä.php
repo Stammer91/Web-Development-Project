@@ -2,7 +2,7 @@
 
 <html>
   <head>
-       <title>Käyttäjä | Ravintola Hämpton Diner</title>
+       <title>KÃ¤yttÃ¤jÃ¤ | Ravintola HÃ¤mpton Diner</title>
        <link rel="Stylesheet" href="Css/Style.Css">
   </head>
   <body>
@@ -11,7 +11,7 @@
       <img class="logo" src="Images/Logo 1.png">
       <nav>
         <ul>
-          <li><a href="http://127.0.0.1/Web-Development-Project/Kirjaudu_Ulos.php">Kirjaudu Ulos</a></li>
+          <li><a href="http://shell.hamk.fi/~oskari20104/Web-Development-Project/Kirjaudu_Ulos.php">Kirjaudu Ulos</a></li>
         </ul>
       </nav>
     </div>
@@ -24,10 +24,11 @@
 
           echo $_SESSION['use'];
 
-          echo " Kirjautuminen onnistui"; 
+          echo " Kirjautuminen onnistui<br>";
 ?>
-//Varaukset
+
 <?php
+echo "<br>Varaukset";
 set_error_handler("anyError", E_ALL);
 
  
@@ -57,12 +58,17 @@ if (!$ok){
     return;
 }
 $tulos=mysqli_query($yhteys, "select * from ryhmä5_varaukset");
+print "<table border='1'>";
+print "<tr><th>ID<th>Nimi<th>Email<th>Lukumaara<th>Pvm<th>Lisatiedot<th>Toimenpide<th>";
 while ($rivi = mysqli_fetch_object($tulos)){
-  print "$rivi->id $rivi->nimi $rivi->email $rivi->maara $rivi->pvm $rivi->lisatiedot";
+print "<tr><td>$rivi->id <td>$rivi->nimi <td>$rivi->email <td>$rivi->maara <td>$rivi->pvm <td>$rivi->lisatiedot <td><a href='Poista.php?id=<?php echo $tulos->id;?>'>Poista</a></td>";
+print "</table>";
 }
 ?>
-//Palautteet
+
 <?php
+echo "<br>Palautteet";
+
 set_error_handler("anyError", E_ALL);
 
  
@@ -89,10 +95,14 @@ if (!$ok){
     return;
 }
 $tulos=mysqli_query($yhteys, "select * from ryhma5_palautteet");
-while ($rivi = mysqli_fetch_object($tulos)){
-  print "$rivi->id $rivi->nimi $rivi->email $rivi->viesti";
-}
 
+while ($rivi = mysqli_fetch_object($tulos)){
+  print "<table border='1'>";
+  print "<tr><th>ID<th>Nimi<th>Email<th>Viesti<th>Toimenpide<th>";
+
+print "<tr><td>$rivi->id <td>$rivi->nimi <td>$rivi->email <td>$rivi->viesti <td><a href='Poista.php'>Poista</a></td>";
+print "</table>";
+}
 ?>
 </body>
 </html>
