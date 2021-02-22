@@ -56,16 +56,16 @@
             <button type="button" onclick="suoritaVaraus();" name="submitvaraus" class="btn btn-primary">Suorita tilaus</button>
         <script> 
 function suoritaVaraus() {
- 
-  $.ajax({
-    type: "POST",
-    url: "varaukset.php",
-    data: "nimi="+nimi.value+"&email="+email.value+"&maara="+maara.value+"&pvm="+pvm.value+"&lisatiedot="+lisatiedot.value,
-    success: function() {
-     alert("Varaus tehty onnistuneesti!");
-      
+  var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+
+                xhttp.open("post", "varaukset.php", true);
+              xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              xhttp.send("nimi="+nimi.value+"&email="+email.value+"&maara="+maara.value+"&pvm="+pvm.value+"&lisatiedot="+lisatiedot.value);
+          
+
+
     }
-  })
 };
            
         </script>
