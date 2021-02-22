@@ -53,18 +53,17 @@
           <label for="msg">Lisätiedot:</label> <br>
           <textarea id="lisatiedot" name="lisatiedot"  cols="60" rows="6"  style="resize: none;"  placeholder="Tähän lisätiedot:" required ></textarea>
         </div>
-            <button type="button" onclick="suoritaVaraus();" name="submitvaraus" class="btn btn-primary">Suorita tilaus</button>
+            <button type="submit" onclick="suoritaVaraus();" name="suoritaVaraus" class="btn btn-primary">Suorita tilaus</button>
         <script> 
 function suoritaVaraus() {
   var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
+   xhttp.onreadystatechange = function() {
 
                 xhttp.open("post", "varaukset.php", true);
               xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
               xhttp.send("nimi="+nimi.value+"&email="+email.value+"&maara="+maara.value+"&pvm="+pvm.value+"&lisatiedot="+lisatiedot.value);
           
-
-
+        alert("Varaus tegty onnistuneesti!")
     }
 };
            
