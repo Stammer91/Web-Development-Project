@@ -62,9 +62,8 @@ function suoritaVaraus() {
     url: "varaukset.php",
     data: "nimi="+nimi.value+"&email="+email.value+"&maara="+maara.value+"&pvm="+pvm.value+"&lisatiedot="+lisatiedot.value,
     success: function() {
-      $("message_box").html(
-        <h3 style="color:green;">Varaus tehty onnistuneesti!</h3>
-      )
+     alert("Varaus tehty onnistuneesti!");
+      
     }
   })
 };
